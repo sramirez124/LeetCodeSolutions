@@ -11,4 +11,17 @@
 var canConstruct = function(s, k) {
     if (s.length < k) return false;
     
+    let countArr = Array(26).fill(0);
+    for (const char of s) {
+        count[char.charCodeAt(0) - 'a'.charCodeAt(0)]++;
+    }
+
+    let odd = 0;
+    for (const count of countArr) {
+        if (count % 2 !== 0) odd++;
+        if (odd > 1) return false;
+    }
+    
+    return true;
+    
 };
