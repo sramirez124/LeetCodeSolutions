@@ -40,12 +40,8 @@ Constraints:
 // Output: [10,11,12]
 
 
-function createCounter(n) {
-    let count = n;
-
-    return function() {
-        return count++;
-    };
+var createCounter = function(n) {
+    return ()=> n++
 };
 
 /**
@@ -60,4 +56,3 @@ const counter = createCounter(10);
 console.log(counter());
 console.log(counter());
 console.log(counter());
-createCounter(["call", "call", "call"]);
