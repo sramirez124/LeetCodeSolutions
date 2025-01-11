@@ -33,14 +33,26 @@ Constraints:
 
  */
 
-/**
- * @param {number} n
- * @return {Function} counter
- */
-var createCounter = function(n) {
-    return function() {
-        return n++;
-    };
+// 01/11/2025
+// Input 1: 
+// n = 10
+// ["call","call","call"]
+// Output: [10,11,12]
+
+
+function createCounter(n) {
+    let count = n;
+    
+    function counter(arr) {
+        let countArray = [];
+        arr.forEach(element => {
+            countArray.push(count);
+            count++;
+        });
+        return countArray;
+    }
+    
+    return console.log(counter());
 };
 
 /**
@@ -51,4 +63,5 @@ var createCounter = function(n) {
  */
 
 
-// 01/11/2025
+const counter = createCounter(10);
+counter(["call", "call", "call"]);
