@@ -42,17 +42,10 @@ Constraints:
 
 function createCounter(n) {
     let count = n;
-    
-    function counter(arr) {
-        let countArray = [];
-        arr.forEach(element => {
-            countArray.push(count);
-            count++;
-        });
-        return countArray;
-    }
-    
-    return console.log(counter());
+
+    return function() {
+        return count++;
+    };
 };
 
 /**
@@ -64,4 +57,7 @@ function createCounter(n) {
 
 
 const counter = createCounter(10);
-counter(["call", "call", "call"]);
+console.log(counter());
+console.log(counter());
+console.log(counter());
+createCounter(["call", "call", "call"]);
